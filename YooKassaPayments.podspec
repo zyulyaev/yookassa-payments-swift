@@ -18,12 +18,14 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.ios.source_files  = 'YooKassaPayments/**/*.{h,swift}', 'YooKassaPayments/*.{h,swift}'
-  s.ios.resources = [
-    'YooKassaPayments/Public/Resources/*.xcassets',
-    'YooKassaPayments/Public/Resources/**/*.plist',
-    'YooKassaPayments/Public/Resources/**/*.json',
-    'YooKassaPayments/Public/Resources/*.lproj/*.strings'
-  ]
+  s.ios.resource_bundles = {
+    'YooKassaPayments' => [
+      'YooKassaPayments/Public/Resources/*.xcassets',
+      'YooKassaPayments/Public/Resources/**/*.plist',
+      'YooKassaPayments/Public/Resources/**/*.json',
+      'YooKassaPayments/Public/Resources/*.lproj/*.strings'
+    ]
+  }
 
   s.ios.framework  = 'UIKit'
   s.ios.framework  = 'PassKit'
